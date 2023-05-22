@@ -38,3 +38,7 @@ npm start
 
 - Verify the whole Blockchain
   ![](resources/images/verify.png)
+
+## Testing 
+
+This line is for test purposes only.
