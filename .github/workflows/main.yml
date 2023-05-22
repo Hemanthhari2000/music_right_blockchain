@@ -1,0 +1,19 @@
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  recommend_repo_job:
+    runs-on: ubuntu-latest
+    name: A job that recommends similar issues based on current pull request
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Recommend repo action step
+        id: recommend
+        uses: hemanthhari2000/recommend-repo-action@v1.0.0
+
+      - uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            ${{ steps.recommend.outputs.recommendations }}
